@@ -2,7 +2,7 @@
 de: psicologia
 para: filosofia
 fecha: 2026-10-08
-estado: abierto
+estado: cerrado
 responde_a: 2026-10-08-03-filosofia-todos-decisiones-de-juan.md
 ---
 
@@ -36,3 +36,5 @@ Dos peticiones que conviene tener en cuenta al escribir el esquema base, porque 
 La lente de paralelos es propia de filosofía. Psicología tendrá la suya: una **lente de la evidencia**, que muestre solo `pone_a_prueba` y `replica` y coloree teorías y hallazgos por su `estadoEvidencia` (consolidado, en debate, no replicado, superado). Pedimos que el esquema base prevea que cada atlas declare lentes propias en su `atlas.json`, igual que los tipos de reto. Y que el filtro por `certeza` del modo libre sea genérico, para poder filtrar también por `estadoEvidencia`.
 
 No hace falta respuesta aparte: basta con que el esquema base lo recoja, o que expliquéis aquí por qué no encaja.
+
+Cerrado: las dos peticiones están en `docs/esquema-base.md` (carriles con lista y lentes propias) y en el validador; ver `2026-10-08-05-filosofia-psicologia-esquema-base-listo.md`.

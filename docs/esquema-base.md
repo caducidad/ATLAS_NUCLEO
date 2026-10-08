@@ -70,6 +70,8 @@ La app carga todos los archivos que enumera `atlas.json` y los une al arrancar, 
 
 Cada atlas puede declarar campos propios y hacer obligatorios campos que aquí son opcionales; en filosofía, por ejemplo, `tradicion` es obligatoria.
 
+**El orden de las listas tiene significado.** En `contextos`, `tematicas`, `escuelas` y las listas propias de cada atlas, el primer elemento es el principal: es el que decide, por ejemplo, en qué carril de la línea del tiempo aparece un autor que pertenece a dos escuelas.
+
 ### Tipos comunes
 
 | Tipo | Obligatorios | Otros campos |
@@ -216,7 +218,14 @@ Cada atlas declara aquí lo suyo. Todos los campos salvo `atlas`, `nombre` y `ar
   "version": "0.1",
   "nucleo": "0.1",
   "archivos": ["datos/tematicas.json", "datos/fundacion.json"],
-  "carriles": "escuelas",
+  "carriles": { "campo": "escuelas", "regla": "primero", "sinValor": "otros" },
+  "lentes": {
+    "evidencia": {
+      "nombre": "La evidencia",
+      "relaciones": ["pone_a_prueba", "replica"],
+      "colorearPor": "estadoEvidencia"
+    }
+  },
   "camposPropios": {
     "tradicion": { "valores": ["…"], "obligatorioEn": ["autor", "obra"] }
   },
@@ -243,7 +252,8 @@ Cada atlas declara aquí lo suyo. Todos los campos salvo `atlas`, `nombre` y `ar
 | Clave | Para qué sirve |
 | --- | --- |
 | `archivos` | Archivos de datos que forman el atlas, en el orden en que se cargan |
-| `carriles` | Campo que separa los carriles de la vista cronológica (en filosofía, `tradicion`); sin él, un solo carril |
+| `carriles` | Campo que separa los carriles de la vista cronológica. Con un campo de valor único basta su nombre (en filosofía, `"tradicion"`). Si el campo es una lista, se escribe como objeto con `"regla": "primero"` (decide el primer elemento) y `sinValor` (el carril de los nodos que no tienen ninguno). Sin `carriles`, la vista tiene un solo carril |
+| `lentes` | Puntos de vista propios del atlas, además de los comunes (ver abajo) |
 | `camposPropios` | Campos que no existen en el esquema base, con sus valores admitidos y los tipos en que son obligatorios |
 | `listas` | Campos propios que son listas de ids, con el tipo al que deben apuntar |
 | `obligatorios` | Campos que pasan a ser obligatorios en un tipo común |
@@ -253,6 +263,22 @@ Cada atlas declara aquí lo suyo. Todos los campos salvo `atlas`, `nombre` y `ar
 | `reglas` | Reglas editoriales propias. Hoy existe `fuenteSiDifiere`: una relación exige `fuente` cuando sus dos extremos tienen distinto valor en un campo |
 
 Hay un ejemplo completo y válido en [`ejemplos/atlas-minimo`](../ejemplos/atlas-minimo).
+
+## Lentes
+
+Los puntos de vista comunes a todos los atlas son el cronológico, el temático, el libre y el recorrido del lector. Cada atlas puede declarar lentes propias en `atlas.json`:
+
+| Campo de la lente | Qué hace |
+| --- | --- |
+| `nombre` | Cómo se llama en el selector (obligatorio) |
+| `descripcion` | Una frase que explica qué muestra |
+| `relaciones` | Solo se muestran estas relaciones y los nodos que unen |
+| `agruparPor` | Campo de la relación por el que se agrupan (en filosofía, `ejeComparacion`) |
+| `colorearPor` | Campo de los nodos que decide su color (en psicología, `estadoEvidencia`) |
+
+El validador comprueba que las relaciones de cada lente existen; el resto lo interpreta el motor de la app.
+
+**Filtros genéricos.** En cualquier lente, el lector puede filtrar por cualquier campo con valores fijos: la `certeza` de las relaciones, el `estadoEvidencia` de los nodos o un campo propio con `valores`, como la `tradicion` en filosofía. El motor obtiene la lista de filtros del esquema, sin programar uno por atlas.
 
 ## Puentes entre atlas
 

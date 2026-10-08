@@ -300,11 +300,28 @@ def validar(ruta_atlas, otros):
         else:
             errores.append(f"atlas.json: regla desconocida «{regla.get('regla')}»")
 
-    # ---- avisos
+    # ---- carriles y lentes
     if "carriles" in atlas:
-        campo = atlas["carriles"]
-        if not any(campo in n for n in nodos):
+        carriles = atlas["carriles"]
+        if isinstance(carriles, str):
+            carriles = {"campo": carriles}
+        campo = carriles.get("campo")
+        valores = [n[campo] for n in nodos if campo and n.get(campo) not in (None, "", [])]
+        if not campo:
+            errores.append("atlas.json: «carriles» necesita un «campo»")
+        elif any(isinstance(v, list) for v in valores) and carriles.get("regla") != "primero":
+            errores.append(f"atlas.json: el campo de carriles «{campo}» es una lista; "
+                           "hace falta «regla»: «primero» (el primer elemento decide el carril)")
+        elif not valores and "sinValor" not in carriles:
             avisos.append(f"el campo de carriles «{campo}» no aparece en ningún nodo")
+    for nombre, lente in atlas.get("lentes", {}).items():
+        if not lente.get("nombre"):
+            errores.append(f"atlas.json: la lente «{nombre}» no tiene «nombre»")
+        for rel in lente.get("relaciones", []):
+            if rel not in esquema["relaciones"]:
+                errores.append(f"atlas.json: la lente «{nombre}» usa la relación desconocida «{rel}»")
+
+    # ---- avisos
     deben = set(esquema["base"]["nodosQueDebenRelacionarse"])
     aislados = sorted(n["id"] for n in nodos if n["id"] not in conectados and n.get("tipo") in deben)
     if aislados:

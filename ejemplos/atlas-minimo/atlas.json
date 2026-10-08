@@ -7,6 +7,11 @@
   "archivos": [
     "datos/ejemplo.json"
   ],
+  "carriles": {
+    "campo": "escuelas",
+    "regla": "primero",
+    "sinValor": "otros"
+  },
   "listas": {
     "investigadores": "autor"
   },
@@ -52,6 +57,17 @@
           ]
         ]
       ]
+    }
+  },
+  "lentes": {
+    "evidencia": {
+      "nombre": "La evidencia",
+      "descripcion": "Solo los experimentos y lo que ponen a prueba, coloreado por el estado de la evidencia.",
+      "relaciones": [
+        "pone_a_prueba",
+        "replica"
+      ],
+      "colorearPor": "estadoEvidencia"
     }
   }
 }

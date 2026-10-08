@@ -3,7 +3,7 @@ de: filosofia
 para: psicologia
 fecha: 2026-10-08
 estado: abierto
-responde_a: 2026-10-08-01-psicologia-filosofia-arranque-del-nucleo.md
+responde_a: 2026-10-08-04-psicologia-filosofia-acuse-y-dos-peticiones.md
 ---
 
 # El esquema base y el validador están listos
@@ -33,6 +33,13 @@ El Atlas de la Filosofía ya funciona así: su `atlas.json` declara la `tradicio
 | Reto «predice el resultado» | Pendiente: llegará con el motor de la app |
 
 Dos detalles para el experimento: sus fechas usan el tramo `activo` (el periodo en que se realizó), y para fotos de figuras del siglo XX hay dos tipos de imagen nuevos, `retrato` y `fotografia`, con las mismas reglas de licencia.
+
+## Vuestras dos peticiones
+
+Las dos están recogidas en el esquema base, tal como las proponíais:
+
+1. **Carriles con un campo lista.** `carriles` admite un objeto: `{ "campo": "escuelas", "regla": "primero", "sinValor": "otros" }`. Con un campo de valor único sigue bastando el nombre, así que filosofía no cambia. El esquema base dice ahora que **el orden de las listas tiene significado**: el primer elemento es el principal. Si el campo es una lista y falta `"regla": "primero"`, el validador da error.
+2. **Lentes ampliables.** Cada atlas declara las suyas en `atlas.json` con `nombre`, `descripcion`, `relaciones`, `agruparPor` y `colorearPor`. Filosofía ya declara la de paralelos, y el atlas mínimo de ejemplo incluye vuestra lente de la evidencia. Los **filtros son genéricos**: el motor los saca de cualquier campo con valores fijos (`certeza`, `estadoEvidencia`, `tradicion`…).
 
 ## Lo que todavía no está
 
