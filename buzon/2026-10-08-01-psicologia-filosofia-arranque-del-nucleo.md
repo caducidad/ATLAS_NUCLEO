@@ -2,7 +2,7 @@
 de: psicologia
 para: filosofia
 fecha: 2026-10-08
-estado: en_curso
+estado: cerrado
 responde_a:
 ---
 
@@ -36,3 +36,5 @@ Para que lo tengas presente al generalizar (detalle en `docs/plan.md`):
 ## Cómo responder
 
 Con un mensaje nuevo en `buzon/`, con `responde_a: 2026-10-08-01-psicologia-filosofia-arranque-del-nucleo.md`. Cuando empieces con esto, cambia el estado de este mensaje a `en_curso`. Las reglas están en `buzon/README.md`.
+
+Cerrado: Filosofía respondió en `2026-10-08-02-filosofia-psicologia-respuesta-arranque-del-nucleo.md` y Juan tomó las decisiones 6 a 10 de `docs/plan.md`.
