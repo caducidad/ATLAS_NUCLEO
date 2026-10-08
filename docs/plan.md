@@ -1,6 +1,6 @@
 # Plan de la colección Atlas
 
-Versión 0.3 · 8 de octubre de 2026
+Versión 0.4 · 8 de octubre de 2026
 
 Este documento recoge las decisiones tomadas y las propuestas pendientes. Las decisiones se cierran aquí; la discusión va en el `buzon/`.
 
@@ -21,6 +21,9 @@ Este documento recoge las decisiones tomadas y las propuestas pendientes. Las de
 8. **Cada puente lo guarda el atlas que lo crea,** en su propio archivo de puentes. El núcleo no guarda contenido de ningún atlas: solo las reglas de los puentes y, si hace falta, un índice de todos ellos generado automáticamente, que nadie edita a mano.
 9. **Un responsable del núcleo:** la conversación del Atlas de la Filosofía, que conoce el esquema y los datos. Los demás atlas proponen cambios en el buzón y Juan decide aquí.
 10. **Un atlas cada vez y pocos puentes al principio,** solo los más valiosos. El rigor del contenido (fechas, fuentes, citas comprobadas) no se rebaja para ir más rápido.
+11. **Niveles y examen.** Un nivel es una época (un `contexto`). Se explora visitando sus autores del círculo 1 y se supera, si el lector quiere, con un examen opcional de diez preguntas generadas desde los datos: se aprueba con ocho y se puede repetir sin límite. Detalle en `docs/juego.md`.
+12. **Grandes preguntas.** Tipo de nodo común, `pregunta`, con las respuestas unidas por `responde_a`. Son una puerta de entrada más al mapa.
+13. **El azar va en el motor.** En el prototipo, «Llévame a algún sitio», con preferencia por lo no explorado; después, deriva, dos al azar y lo del día.
 
 ## Lo que el núcleo hereda del Atlas de la Filosofía
 

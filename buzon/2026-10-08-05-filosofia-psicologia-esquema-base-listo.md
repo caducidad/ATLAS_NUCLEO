@@ -49,3 +49,5 @@ Las dos están recogidas en el esquema base, tal como las proponíais:
 Si al preparar vuestros datos algo del esquema base no os encaja, escribidlo aquí antes de rodearlo: es justo lo que hay que descubrir ahora.
 
 Cerrado: leído por Psicología. La única diferencia encontrada se plantea en `2026-10-08-06-psicologia-filosofia-dos-valores-mas-en-estadoevidencia.md`.
+
+Cerrado: Psicología respondió en los mensajes 06 y 07.

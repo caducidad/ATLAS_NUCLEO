@@ -54,7 +54,7 @@ La app carga todos los archivos que enumera `atlas.json` y los une al arrancar, 
 | Campo | Obligatorio | Qué contiene |
 | --- | --- | --- |
 | `id` | Sí | Identificador `tipo.nombre` |
-| `tipo` | Sí | autor, obra, concepto, tesis, escuela, contexto, tematica o un tipo propio del atlas |
+| `tipo` | Sí | autor, obra, concepto, tesis, escuela, contexto, tematica, pregunta o un tipo propio del atlas |
 | `nombre` | Sí | Forma visible: «Confucio», «Analectas» |
 | `resumen` | Sí | Dos o tres frases accesibles, con enlaces |
 | `nombreOriginal` | No | Escritura original: 孔子, Πλάτων |
@@ -65,7 +65,8 @@ La app carga todos los archivos que enumera `atlas.json` y los une al arrancar, 
 | `profundizacion` | No | Texto riguroso, con enlaces |
 | `fechas` | Según tipo | Objeto de fechas (abajo) |
 | `imagenes` | No | Lista de imágenes (abajo) |
-| `estadoEvidencia` | No | consolidado, en_debate, no_replicado o superado (abajo) |
+| `estadoEvidencia` | No | consolidado, matizado, en_debate, no_replicado, desacreditado o superado (abajo) |
+| `notaEvidencia` | No | Por qué el nodo tiene ese estado, con su fuente |
 | `fuentes` | No | Referencias bibliográficas para la profundización |
 
 Cada atlas puede declarar campos propios y hacer obligatorios campos que aquí son opcionales; en filosofía, por ejemplo, `tradicion` es obligatoria.
@@ -83,6 +84,7 @@ Cada atlas puede declarar campos propios y hacer obligatorios campos que aquí s
 | **escuela** | `naturaleza` | real o rotulo_historiografico (una etiqueta puesta después, como «presocráticos») |
 | **contexto** | `horquilla` (`inicio` y `fin`) | `lugar`; las subdivisiones se mencionan en el texto |
 | **tematica** | — | Cada atlas tiene las suyas |
+| **pregunta** | `enunciado` | Una gran pregunta de la disciplina; las respuestas se le unen con `responde_a` (ver `docs/juego.md`) |
 
 `autoria` admite: autor, atribuida, escuela, compilacion o anonima.
 
@@ -195,17 +197,24 @@ Cada relación es un objeto con su grado de certeza:
 - `nota`: explicación breve, con enlaces si hace falta.
 - `ejeComparacion`: obligatorio en `paralelo_a`; dice en qué se parecen los dos nodos («impermanencia»). `paralelo_a` sirve para comparar sin afirmar una influencia que no consta.
 - No puede haber dos relaciones con el mismo origen, tipo y destino.
+- **Campos propios de una relación.** Una relación, común o propia, puede declarar en su definición `obligatorios` (campos que debe llevar) y `valores` (valores admitidos de un campo), igual que los tipos de nodo. Por ejemplo, en psicología `replica` lleva `resultadoReplica`: exito, parcial o fallo. El validador comprueba ambos.
 
 ## Estado de la evidencia
 
 `certeza` dice si consta una **relación** (que A influyó en B). `estadoEvidencia` dice cómo está hoy una **afirmación**: una tesis, una teoría o un hallazgo.
 
-- `consolidado`: aceptado por la comunidad y bien apoyado.
-- `en_debate`: discutido o con resultados contradictorios.
-- `no_replicado`: intentos serios de repetirlo han fallado.
-- `superado`: abandonado o sustituido por otra explicación.
+| Valor | Significado | Familia |
+| --- | --- | --- |
+| `consolidado` | Replicado de forma independiente y robusta | Se sostiene |
+| `matizado` | El hallazgo central se sostiene, pero se han corregido su alcance, su tamaño o su interpretación | Se sostiene |
+| `en_debate` | Hay réplicas a favor y en contra, o críticas serias sin resolver | En duda |
+| `no_replicado` | Réplicas rigurosas no han encontrado el efecto | No se sostiene |
+| `desacreditado` | Problemas graves de método o de integridad invalidan el estudio como prueba, aunque siga siendo históricamente importante | No se sostiene |
+| `superado` | Abandonado por la disciplina y sustituido por otra explicación mejor: lo normal en una ciencia | No se sostiene |
 
-Es un campo opcional para todos los nodos; cada atlas decide en qué tipos lo hace obligatorio.
+- **`notaEvidencia`** acompaña al estado: desde cuándo y por qué el nodo tiene ese estado, con la fuente. Admite enlaces. El validador avisa cuando hay estado sin nota, porque un estado sin justificación es justo lo que los atlas quieren evitar.
+- En los mapas, el motor colorea por **familias** (se sostiene, en duda, no se sostiene) y deja el detalle para la ficha.
+- Es un campo opcional para todos los nodos; cada atlas decide en qué tipos lo hace obligatorio.
 
 ## Extender el esquema: `atlas.json`
 
@@ -278,7 +287,7 @@ Los puntos de vista comunes a todos los atlas son el cronológico, el temático,
 
 El validador comprueba que las relaciones de cada lente existen; el resto lo interpreta el motor de la app.
 
-**Filtros genéricos.** En cualquier lente, el lector puede filtrar por cualquier campo con valores fijos: la `certeza` de las relaciones, el `estadoEvidencia` de los nodos o un campo propio con `valores`, como la `tradicion` en filosofía. El motor obtiene la lista de filtros del esquema, sin programar uno por atlas.
+**Filtros genéricos.** En cualquier lente, el lector puede filtrar por cualquier campo con valores fijos: la `certeza` de las relaciones y los campos con `valores` de cada relación (como el `resultadoReplica` de psicología, para ver «solo las réplicas fallidas»), el `estadoEvidencia` de los nodos o un campo propio con `valores`, como la `tradicion` en filosofía. El motor obtiene la lista de filtros del esquema, sin programar uno por atlas.
 
 ## Puentes entre atlas
 
@@ -305,11 +314,12 @@ Se guarda en el navegador y es también el formato del archivo que se exporta e 
   ],
   "busquedas": [ { "atlas": "filosofia", "texto": "virtud", "t": "2026-10-08T10:20" } ],
   "retos": { "filosofia": { "aciertos": 12, "fallos": 4 } },
-  "misiones": { "filosofia:mision.hilo_virtud": { "pasos": ["filosofia:autor.socrates", "filosofia:autor.platon"] } }
+  "misiones": { "filosofia:mision.hilo_virtud": { "pasos": ["filosofia:autor.socrates", "filosofia:autor.platon"] } },
+  "niveles": { "filosofia:contexto.cien_escuelas": { "superado": "2026-10-20", "mejor": 9, "intentos": 2 } }
 }
 ```
 
-- **Niebla de guerra:** 0 visitas sin explorar; 1 rojo brasa; 2-4 naranja; 5 o más amarillo. Los umbrales se ajustarán al probar.
+- **Niebla de guerra, niveles y examen:** ver [`docs/juego.md`](juego.md).
 - **Mapa del recorrido:** sale de `recorrido`, porque cada paso guarda de qué nodo venía, aunque sea de otro atlas.
 - **Varios perfiles:** cada perfil se guarda con su propia clave.
 - **Ids que ya no existen:** se conservan al importar, sin mostrarlos.

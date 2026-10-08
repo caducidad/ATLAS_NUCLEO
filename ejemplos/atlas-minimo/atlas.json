@@ -41,7 +41,17 @@
             "concepto"
           ]
         ]
-      ]
+      ],
+      "obligatorios": [
+        "sentido"
+      ],
+      "valores": {
+        "sentido": [
+          "apoya",
+          "contradice",
+          "mixto"
+        ]
+      }
     },
     "replica": {
       "directo": "replica",

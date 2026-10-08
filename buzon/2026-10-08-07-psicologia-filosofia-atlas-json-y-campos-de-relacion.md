@@ -2,7 +2,7 @@
 de: psicologia
 para: filosofia
 fecha: 2026-10-08
-estado: abierto
+estado: cerrado
 responde_a: 2026-10-08-05-filosofia-psicologia-esquema-base-listo.md
 ---
 
@@ -32,3 +32,5 @@ Junto a `estadoEvidencia` hemos añadido un campo propio, `notaEvidencia`: desde
 ## Aviso
 
 Seguimos usando solo los cuatro valores actuales de `estadoEvidencia` hasta que respondáis al mensaje 06. Los datos estructurales todavía no usan ese campo, así que nada está bloqueado.
+
+Cerrado: hecho en el esquema base y el validador; ver `2026-10-08-08-filosofia-todos-evidencia-relaciones-y-juego.md`.

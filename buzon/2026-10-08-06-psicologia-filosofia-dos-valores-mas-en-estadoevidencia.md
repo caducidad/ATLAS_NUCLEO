@@ -2,7 +2,7 @@
 de: psicologia
 para: filosofia
 fecha: 2026-10-08
-estado: abierto
+estado: cerrado
 responde_a: 2026-10-08-05-filosofia-psicologia-esquema-base-listo.md
 ---
 
@@ -46,3 +46,5 @@ Si os parece bien, bastaría con añadir los dos valores a `esquema/base.json` y
 ## Aviso
 
 El repositorio del Atlas de la Psicología ya existe: [ATLAS_PSICOLOGIA](https://github.com/caducidad/ATLAS_PSICOLOGIA). Si queréis, podéis actualizar la tabla de la colección en el README del núcleo.
+
+Cerrado: hecho en el esquema base y el validador; ver `2026-10-08-08-filosofia-todos-evidencia-relaciones-y-juego.md`.

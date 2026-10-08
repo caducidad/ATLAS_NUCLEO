@@ -76,6 +76,7 @@ def cargar_esquema(atlas):
         "listas": {**base["camposComunes"]["listas"], **atlas.get("listas", {})},
         "textos": base["camposComunes"]["textos"],
         "obligatoriosComunes": base["camposComunes"]["obligatorios"],
+        "acompanantes": base["camposComunes"].get("acompanantes", {}),
         "obligatoriosSi": atlas.get("obligatoriosSi", []),
         "relaciones": relaciones,
         "reglas": atlas.get("reglas", []),
@@ -280,6 +281,9 @@ def validar(ruta_atlas, otros):
             for campo in definicion.get("obligatorios", []):
                 if falta(r, campo):
                     errores.append(f"{rid}: «{r['tipo']}» exige el campo «{campo}»")
+            for campo, admitidos in definicion.get("valores", {}).items():
+                if campo in r and r[campo] not in admitidos:
+                    errores.append(f"{rid}: {campo} «{r[campo]}» no admitido ({', '.join(map(str, admitidos))})")
         if r.get("certeza") not in certezas:
             errores.append(f"{rid}: certeza debe ser {', '.join(certezas)}")
         if r.get("nota"):
@@ -322,6 +326,10 @@ def validar(ruta_atlas, otros):
                 errores.append(f"atlas.json: la lente «{nombre}» usa la relación desconocida «{rel}»")
 
     # ---- avisos
+    for campo, companero in esquema["acompanantes"].items():
+        sin_nota = sorted(n["id"] for n in nodos if n.get(campo) and falta(n, companero))
+        if sin_nota:
+            avisos.append(f"«{campo}» sin «{companero}» que lo justifique: " + ", ".join(sin_nota))
     deben = set(esquema["base"]["nodosQueDebenRelacionarse"])
     aislados = sorted(n["id"] for n in nodos if n["id"] not in conectados and n.get("tipo") in deben)
     if aislados:

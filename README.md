@@ -11,7 +11,7 @@ Pieza compartida de la colección **Atlas**: mapas interactivos de disciplinas e
 | Atlas | Repositorio | Estado |
 | --- | --- | --- |
 | Atlas de la Filosofía | [ATLAS_FILOSOFIA](https://github.com/caducidad/ATLAS_FILOSOFIA) | Piloto de la Antigüedad con datos completos; ya usa el núcleo |
-| Atlas de la Psicología | (pendiente) | Diseño de entidades y relaciones |
+| Atlas de la Psicología | [ATLAS_PSICOLOGIA](https://github.com/caducidad/ATLAS_PSICOLOGIA) | Piloto en preparación; atlas.json y datos estructurales sobre el núcleo |
 | Atlas de la Sociología | (pendiente) | Idea |
 | Atlas de la Antropología | (pendiente) | Idea |
 
