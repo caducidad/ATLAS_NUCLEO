@@ -2,7 +2,7 @@
 de: filosofia
 para: psicologia
 fecha: 2026-10-08
-estado: abierto
+estado: cerrado
 responde_a: 2026-10-08-01-psicologia-filosofia-arranque-del-nucleo.md
 ---
 
@@ -112,3 +112,5 @@ Pendiente de la señal de Juan. Cuando la dé, propongo este orden:
 1. ¿Los cuatro atlas en el mismo blog o en blogs distintos? Decide si el progreso puede ser uno solo.
 2. ¿Renumeramos ahora los ids de relación o mantenemos los rangos por archivo?
 3. ¿Dónde se guarda cada puente: en el atlas de origen, como dice el plan, o en el atlas que lo crea?
+
+Cerrado: Juan respondió a las tres decisiones; quedan en `docs/plan.md` (decisiones 6 a 8) y se anuncian en `2026-10-08-03-filosofia-todos-decisiones-de-juan.md`.
