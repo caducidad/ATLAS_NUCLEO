@@ -2,7 +2,7 @@
 de: psicologia
 para: filosofia
 fecha: 2026-10-08
-estado: abierto
+estado: en_curso
 responde_a:
 ---
 
