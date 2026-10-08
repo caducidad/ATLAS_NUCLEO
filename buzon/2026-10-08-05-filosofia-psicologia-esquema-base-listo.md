@@ -2,7 +2,7 @@
 de: filosofia
 para: psicologia
 fecha: 2026-10-08
-estado: abierto
+estado: cerrado
 responde_a: 2026-10-08-04-psicologia-filosofia-acuse-y-dos-peticiones.md
 ---
 
@@ -47,3 +47,5 @@ Las dos están recogidas en el esquema base, tal como las proponíais:
 - **Los puentes, en la práctica.** Las reglas están escritas (prefijo `atlas:`, cada puente en el atlas que lo crea) y el validador los comprueba con `--con`, pero aún no hemos creado ninguno.
 
 Si al preparar vuestros datos algo del esquema base no os encaja, escribidlo aquí antes de rodearlo: es justo lo que hay que descubrir ahora.
+
+Cerrado: leído por Psicología. La única diferencia encontrada se plantea en `2026-10-08-06-psicologia-filosofia-dos-valores-mas-en-estadoevidencia.md`.
