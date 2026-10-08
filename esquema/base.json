@@ -1,0 +1,52 @@
+{
+  "version": "0.1",
+  "descripcion": "Esquema base de la colección Atlas: tipos de nodo comunes, campos obligatorios y valores admitidos. Cada atlas lo amplía con su atlas.json.",
+  "camposComunes": {
+    "obligatorios": ["id", "tipo", "nombre", "resumen"],
+    "listas": {
+      "contextos": "contexto",
+      "tematicas": "tematica",
+      "escuelas": "escuela"
+    },
+    "textos": ["resumen", "profundizacion", "anecdotas"],
+    "valores": {
+      "estadoEvidencia": ["consolidado", "en_debate", "no_replicado", "superado"]
+    }
+  },
+  "tiposNodo": {
+    "autor":    { "obligatorios": ["fechas"], "valores": { "circulo": [1, 2, 3] } },
+    "obra":     { "obligatorios": ["autoria", "fechas"], "valores": { "autoria": ["autor", "atribuida", "escuela", "compilacion", "anonima"] } },
+    "concepto": { "obligatorios": [] },
+    "tesis":    { "obligatorios": ["enunciado"] },
+    "escuela":  { "obligatorios": ["naturaleza"], "valores": { "naturaleza": ["real", "rotulo_historiografico"] } },
+    "contexto": { "obligatorios": ["horquilla"] },
+    "tematica": { "obligatorios": [] }
+  },
+  "fechas": {
+    "tipo": ["exacta", "aproximada", "tradicional", "actividad"],
+    "historicidad": ["historico", "probable", "debatido", "legendario", "colectivo"],
+    "tramos": ["nacimiento", "muerte", "activo", "composicion"]
+  },
+  "certezas": {
+    "D": "documentado",
+    "P": "probable",
+    "C": "conjetural",
+    "L": "legendario"
+  },
+  "fiabilidadAnecdotas": {
+    "A": "fuente contemporánea de los hechos",
+    "B": "fuente posterior pero seria",
+    "C": "tradición o anécdota literaria",
+    "L": "leyenda"
+  },
+  "imagenes": {
+    "obligatorios": ["archivo", "fuente", "tipo", "pie", "licencia"],
+    "tipos": ["retrato_imaginario", "retrato", "fotografia", "escultura", "manuscrito", "inscripcion", "lugar", "objeto", "otro"],
+    "licencias": ["dominio_publico", "CC0",
+                  "CC-BY-2.0", "CC-BY-2.5", "CC-BY-3.0", "CC-BY-4.0",
+                  "CC-BY-SA-2.0", "CC-BY-SA-2.5", "CC-BY-SA-3.0", "CC-BY-SA-4.0"],
+    "exigenCredito": ["CC-BY-2.0", "CC-BY-2.5", "CC-BY-3.0", "CC-BY-4.0",
+                      "CC-BY-SA-2.0", "CC-BY-SA-2.5", "CC-BY-SA-3.0", "CC-BY-SA-4.0"]
+  },
+  "nodosQueDebenRelacionarse": ["autor", "obra", "concepto", "tesis"]
+}

@@ -1,0 +1,37 @@
+{
+  "version": "0.1",
+  "actualizado": "2026-10-08",
+  "descripcion": "Datos de ejemplo para probar las extensiones; no forman parte de ningún atlas.",
+  "prefijoRelaciones": "ej",
+  "nodos": [
+    {
+      "id": "autor.milgram",
+      "tipo": "autor",
+      "nombre": "Stanley Milgram",
+      "fechas": { "nacimiento": { "min": 1933, "max": 1933 }, "muerte": { "min": 1984, "max": 1984 }, "tipo": "exacta", "historicidad": "historico", "alternativas": [] },
+      "resumen": "Psicólogo social estadounidense, conocido por sus experimentos sobre la [[experimento.obediencia_milgram|obediencia a la autoridad]]."
+    },
+    {
+      "id": "experimento.obediencia_milgram",
+      "tipo": "experimento",
+      "nombre": "Experimento de obediencia de Milgram",
+      "investigadores": ["autor.milgram"],
+      "fechas": { "activo": { "min": 1961, "max": 1962 }, "tipo": "exacta", "historicidad": "historico", "alternativas": [] },
+      "diseno": "Los participantes creían ayudar en un estudio sobre el aprendizaje y debían administrar descargas eléctricas, cada vez más fuertes, a otra persona que en realidad era un actor y no recibía ninguna.",
+      "resultado": "En la versión básica, 26 de los 40 participantes llegaron a la descarga máxima de 450 voltios.",
+      "estadoEvidencia": "en_debate",
+      "resumen": "Estudio de [[autor.milgram|Stanley Milgram]] en la Universidad de Yale sobre hasta dónde obedece una persona corriente una orden que daña a otro."
+    },
+    {
+      "id": "tesis.estado_agentico",
+      "tipo": "tesis",
+      "nombre": "El estado agéntico",
+      "enunciado": "Ante una autoridad que se considera legítima, la persona pasa a verse como instrumento de la voluntad ajena y deja de sentirse responsable de sus actos.",
+      "resumen": "Explicación que [[autor.milgram|Milgram]] propuso para los resultados de su experimento."
+    }
+  ],
+  "relaciones": [
+    { "id": "ej-0001", "origen": "experimento.obediencia_milgram", "tipo": "pone_a_prueba", "destino": "tesis.estado_agentico", "certeza": "D" },
+    { "id": "ej-0002", "origen": "autor.milgram", "tipo": "defiende", "destino": "tesis.estado_agentico", "certeza": "D" }
+  ]
+}

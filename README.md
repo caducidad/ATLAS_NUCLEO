@@ -4,13 +4,13 @@ Pieza compartida de la colección **Atlas**: mapas interactivos de disciplinas e
 
 **Autor:** Juan Domínguez Gallego
 
-> Estado: en planificación. De momento el repositorio contiene el plan de trabajo y el buzón de coordinación. El esquema común, el validador y el motor de la app se irán extrayendo del Atlas de la Filosofía.
+> Estado: en desarrollo. Ya están el esquema base, el catálogo común de relaciones y el validador, extraídos del Atlas de la Filosofía. El motor de la app se construirá primero como prototipo con los datos de Filosofía y pasará aquí cuando funcione.
 
 ## La colección
 
 | Atlas | Repositorio | Estado |
 | --- | --- | --- |
-| Atlas de la Filosofía | [ATLAS_FILOSOFIA](https://github.com/caducidad/ATLAS_FILOSOFIA) | Piloto de la Antigüedad con datos completos |
+| Atlas de la Filosofía | [ATLAS_FILOSOFIA](https://github.com/caducidad/ATLAS_FILOSOFIA) | Piloto de la Antigüedad con datos completos; ya usa el núcleo |
 | Atlas de la Psicología | (pendiente) | Diseño de entidades y relaciones |
 | Atlas de la Sociología | (pendiente) | Idea |
 | Atlas de la Antropología | (pendiente) | Idea |
@@ -34,10 +34,29 @@ Las cuatro disciplinas comparten tronco y figuras (Durkheim, G. H. Mead, William
 
 ```
 docs/
-  plan.md      Decisiones tomadas y plan de trabajo
-buzon/         Mensajes entre las conversaciones que construyen la colección
-  README.md    Cómo funciona el buzón
+  plan.md            Decisiones tomadas y plan de trabajo
+  esquema-base.md    Esquema común: nodos, relaciones, textos, imágenes, progreso,
+                     Guía de redacción y cómo amplía cada atlas el esquema
+esquema/
+  base.json          Esquema base legible por máquina
+  relaciones.json    Catálogo común de tipos de relación
+herramientas/
+  validar.py         Validador común: esquema base más el atlas.json de cada atlas
+  revisar_nombres.py Ayuda para la regla 1 de la Guía de redacción
+ejemplos/
+  atlas-minimo/      Atlas de ejemplo con un tipo y relaciones propios
+buzon/               Mensajes entre las conversaciones que construyen la colección
+  README.md          Cómo funciona el buzón
 ```
+
+## Validar un atlas
+
+```
+python3 herramientas/validar.py RUTA_DEL_ATLAS
+python3 herramientas/validar.py RUTA_DEL_ATLAS --con RUTA_DE_OTRO_ATLAS
+```
+
+La ruta es la carpeta que contiene el `atlas.json`. Con `--con` se comprueban también los ids de otros atlas. Solo necesita Python 3.
 
 ## Licencias
 

@@ -1,0 +1,19 @@
+{
+  "version": "0.1",
+  "descripcion": "Catálogo común de tipos de relación de la colección Atlas. «entre» indica qué tipos de nodo puede unir cada relación: una lista de pares [orígenes, destinos]; null significa cualquier tipo.",
+  "tiposRelacion": {
+    "escribio":       { "directo": "escribió",          "inverso": "escrita por",            "simetrica": false, "entre": [[["autor"], ["obra"]]] },
+    "parte_de":       { "directo": "es parte de",       "inverso": "contiene",               "simetrica": false, "entre": [[["obra"], ["obra"]], [["tematica"], ["tematica"]], [["contexto"], ["contexto"]]] },
+    "fue_maestro_de": { "directo": "fue maestro de",    "inverso": "fue discípulo de",       "simetrica": false, "entre": [[["autor"], ["autor"]]] },
+    "influyo_en":     { "directo": "influyó en",        "inverso": "recibió influencia de",  "simetrica": false, "entre": null },
+    "critica":        { "directo": "critica",           "inverso": "es criticado por",       "simetrica": false, "entre": null },
+    "desarrolla":     { "directo": "desarrolla",        "inverso": "es desarrollado por",    "simetrica": false, "entre": null },
+    "responde_a":     { "directo": "responde a",        "inverso": "recibe respuesta de",    "simetrica": false, "entre": null },
+    "defiende":       { "directo": "defiende",          "inverso": "es defendida por",       "simetrica": false, "entre": [[["autor", "escuela", "obra"], ["tesis"]]] },
+    "trata_sobre":    { "directo": "trata sobre",       "inverso": "se trata en",            "simetrica": false, "entre": [[["obra", "tesis"], ["concepto", "tesis"]]] },
+    "comenta":        { "directo": "comenta",           "inverso": "es comentada por",       "simetrica": false, "entre": [[["autor", "obra"], ["obra"]]] },
+    "es_fuente_de":   { "directo": "es fuente sobre",   "inverso": "se conoce a través de",  "simetrica": false, "entre": [[["obra"], ["autor", "escuela", "contexto", "obra"]]] },
+    "se_opone_a":     { "directo": "se opone a",        "inverso": "se opone a",             "simetrica": true,  "entre": [[["concepto", "tesis", "escuela", "autor"], ["concepto", "tesis", "escuela", "autor"]]] },
+    "paralelo_a":     { "directo": "es paralelo a",     "inverso": "es paralelo a",          "simetrica": true,  "entre": null, "obligatorios": ["ejeComparacion"] }
+  }
+}

@@ -1,6 +1,6 @@
 # Plan de la colección Atlas
 
-Versión 0.2 · 8 de octubre de 2026
+Versión 0.3 · 8 de octubre de 2026
 
 Este documento recoge las decisiones tomadas y las propuestas pendientes. Las decisiones se cierran aquí; la discusión va en el `buzon/`.
 
@@ -39,17 +39,17 @@ Ya probado en el piloto de la Antigüedad (353 nodos, 518 relaciones) y document
 
 ## Lo que hay que generalizar para que sirva a todos los atlas
 
-Propuestas revisadas desde el Atlas de la Filosofía (ver `buzon/2026-10-08-02-filosofia-psicologia-respuesta-arranque-del-nucleo.md`); se cierran al hacer la extracción:
+Revisadas desde el Atlas de la Filosofía (ver `buzon/2026-10-08-02-filosofia-psicologia-respuesta-arranque-del-nucleo.md`). La primera extracción, del 8 de octubre, resolvió las marcadas como **hecho**; el detalle está en `docs/esquema-base.md`.
 
-1. **Tipos de nodo extensibles.** Un conjunto común (autor, obra, concepto, tesis, escuela, contexto, temática) y la posibilidad de que cada atlas declare tipos propios con sus campos (por ejemplo `experimento` en psicología).
-2. **Catálogo de relaciones en dos capas.** Las comunes en el núcleo y las propias en cada atlas.
-3. **`tradicion` deja de ser universal.** En filosofía organiza el contenido; en psicología, sociología y antropología, disciplinas modernas y sobre todo occidentales, apenas sirve. Cada atlas declara sus ejes de organización.
-4. **Temáticas por atlas.** Las 14 temáticas actuales son de filosofía; cada atlas tiene las suyas.
+1. **Hecho. Tipos de nodo extensibles.** Un conjunto común (autor, obra, concepto, tesis, escuela, contexto, temática) y la posibilidad de que cada atlas declare tipos propios con sus campos (por ejemplo `experimento` en psicología).
+2. **Hecho. Catálogo de relaciones en dos capas.** Las comunes en el núcleo y las propias en cada atlas.
+3. **Hecho. `tradicion` deja de ser universal.** En filosofía organiza el contenido; en psicología, sociología y antropología, disciplinas modernas y sobre todo occidentales, apenas sirve. Cada atlas declara sus ejes de organización.
+4. **Hecho. Temáticas por atlas.** Las 14 temáticas actuales son de filosofía; cada atlas tiene las suyas.
 5. **Ids de relación sin choques entre atlas.** Decidido: ver la decisión 7.
-6. **Configuración por atlas** para el motor: nombre, lista de archivos, colores, tipos y relaciones propios.
-7. **Formato del progreso** con un campo `atlas`, para que un lector pueda tener progreso en varios.
+6. **Hecho para los datos; pendiente para el motor. Configuración por atlas** (`atlas.json`) para el motor: nombre, lista de archivos, colores, tipos y relaciones propios.
+7. **Hecho en el esquema; falta programarlo. Formato del progreso** con ids prefijados por atlas, para que un lector pueda tener progreso en varios.
 8. **Retos ampliables.** Cada atlas puede añadir tipos de reto propios (ver psicología, abajo).
-9. **Reglas editoriales comunes.** Pasan al núcleo la Guía de redacción (ningún nombre propio sin enlazar o explicar, claridad antes que brevedad, referencias legibles), las reglas de las imágenes y la escala de fiabilidad de las anécdotas, redactada en términos generales.
+9. **Hecho. Reglas editoriales comunes.** Pasan al núcleo la Guía de redacción (ningún nombre propio sin enlazar o explicar, claridad antes que brevedad, referencias legibles), las reglas de las imágenes y la escala de fiabilidad de las anécdotas, redactada en términos generales.
 
 ## Puentes entre atlas
 

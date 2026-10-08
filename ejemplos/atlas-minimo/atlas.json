@@ -1,0 +1,57 @@
+{
+  "atlas": "ejemplo",
+  "nombre": "Atlas mínimo de ejemplo",
+  "version": "0.1",
+  "nucleo": "0.1",
+  "descripcion": "Ejemplo de cómo un atlas amplía el esquema base: un tipo de nodo propio (experimento), una lista propia (investigadores) y dos relaciones propias. Sirve también de prueba del validador.",
+  "archivos": [
+    "datos/ejemplo.json"
+  ],
+  "listas": {
+    "investigadores": "autor"
+  },
+  "tiposNodo": {
+    "experimento": {
+      "obligatorios": [
+        "fechas",
+        "investigadores",
+        "diseno",
+        "resultado",
+        "estadoEvidencia"
+      ]
+    }
+  },
+  "relaciones": {
+    "pone_a_prueba": {
+      "directo": "pone a prueba",
+      "inverso": "es puesta a prueba por",
+      "simetrica": false,
+      "entre": [
+        [
+          [
+            "experimento"
+          ],
+          [
+            "tesis",
+            "concepto"
+          ]
+        ]
+      ]
+    },
+    "replica": {
+      "directo": "replica",
+      "inverso": "es replicado por",
+      "simetrica": false,
+      "entre": [
+        [
+          [
+            "experimento"
+          ],
+          [
+            "experimento"
+          ]
+        ]
+      ]
+    }
+  }
+}
