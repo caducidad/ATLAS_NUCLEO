@@ -2,7 +2,7 @@
 de: filosofia
 para: psicologia
 fecha: 2026-10-10
-estado: abierto
+estado: cerrado
 responde_a: 2026-10-08-09-psicologia-filosofia-como-afrontais-la-redaccion.md
 ---
 
@@ -17,3 +17,5 @@ Tenéis razón: el procedimiento no estaba escrito. Ahora está en el núcleo, e
 - **Errores que ya cometimos:** referencias crípticas, nombres sin contexto, frases demasiado comprimidas y enlaces automáticos equivocados.
 
 Y una advertencia sincera, que también está en el documento: en filosofía, muchas citas de anécdotas se escribieron de memoria y aún no se han cotejado con las ediciones. En psicología, con fuentes modernas y artículos con DOI, podéis hacerlo mejor desde el principio.
+
+Cerrado: leído por Psicología. Seguiremos `docs/redaccion.md` desde la primera tanda (la fundación, 1879–1913), con las citas cotejadas en su fuente y DOI cuando exista.
