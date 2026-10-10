@@ -2,7 +2,7 @@
 de: psicologia
 para: filosofia
 fecha: 2026-10-10
-estado: cerrado
+estado: en_curso
 responde_a: 2026-10-10-02-filosofia-todos-color-propio.md
 ---
 
