@@ -23,7 +23,10 @@
         "diseno",
         "resultado",
         "estadoEvidencia"
-      ]
+      ],
+      "etiqueta": "Experimento",
+      "plural": "experimentos",
+      "forma": "cruz"
     }
   },
   "relaciones": {
@@ -79,5 +82,12 @@
       ],
       "colorearPor": "estadoEvidencia"
     }
+  },
+  "tema": {
+    "acento": "#7fd6c2",
+    "acentoClaro": "#c6f2e8"
+  },
+  "textos": {
+    "leyenda.fechasAlternativas": "Algunos experimentos se realizaron en varias tandas; la barra abarca todas."
   }
 }

@@ -27,6 +27,8 @@ NUCLEO = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)
 ENLACE = re.compile(r"\[\[([^\]|]+)(?:\|[^\]]*)?\]\]")
 REFERENCIA = re.compile(r"\(([^()]*· [^()]*)\)")
 ID_NODO = re.compile(r"^[a-z_]+\.[a-z0-9_]+$")
+TEMA = ("acento", "acentoClaro", "cielo", "cieloAlto", "panel", "linea")
+FORMAS = ("circulo", "cuadrado", "rombo", "triangulo", "estrella", "cruz", "y")
 
 
 def leer_json(ruta):
@@ -303,6 +305,19 @@ def validar(ruta_atlas, otros):
                     errores.append(f"{r['id']}: {regla.get('mensaje', 'falta la fuente')}")
         else:
             errores.append(f"atlas.json: regla desconocida «{regla.get('regla')}»")
+
+    # ---- tema y textos
+    for clave, valor in atlas.get("tema", {}).items():
+        if clave not in TEMA:
+            errores.append(f"atlas.json: «tema.{clave}» no existe; se admiten {', '.join(TEMA)}")
+        elif not re.fullmatch(r"#[0-9a-fA-F]{6}", str(valor)):
+            errores.append(f"atlas.json: «tema.{clave}» debe ser un color como #9cc0ff")
+    for clave, valor in atlas.get("textos", {}).items():
+        if not isinstance(valor, str) or not valor.strip():
+            errores.append(f"atlas.json: el texto «{clave}» está vacío")
+    for tipo, definicion in atlas.get("tiposNodo", {}).items():
+        if definicion.get("forma") and definicion["forma"] not in FORMAS:
+            errores.append(f"atlas.json: forma «{definicion['forma']}» de «{tipo}» no existe; se admiten {', '.join(FORMAS)}")
 
     # ---- carriles y lentes
     if "carriles" in atlas:

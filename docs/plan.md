@@ -1,6 +1,6 @@
 # Plan de la colección Atlas
 
-Versión 0.4 · 8 de octubre de 2026
+Versión 0.5 · 10 de octubre de 2026
 
 Este documento recoge las decisiones tomadas y las propuestas pendientes. Las decisiones se cierran aquí; la discusión va en el `buzon/`.
 
@@ -24,6 +24,7 @@ Este documento recoge las decisiones tomadas y las propuestas pendientes. Las de
 11. **Niveles y examen.** Un nivel es una época (un `contexto`). Se explora visitando sus autores del círculo 1 y se supera, si el lector quiere, con un examen opcional de diez preguntas generadas desde los datos: se aprueba con ocho y se puede repetir sin límite. Detalle en `docs/juego.md`.
 12. **Grandes preguntas.** Tipo de nodo común, `pregunta`, con las respuestas unidas por `responde_a`. Son una puerta de entrada más al mapa.
 13. **El azar va en el motor.** En el prototipo, «Llévame a algún sitio», con preferencia por lo no explorado; después, deriva, dos al azar y lo del día.
+14. **Diseño común, color propio.** El comportamiento de las pantallas, la estructura, la tipografía y el juego son comunes a todos los atlas; cada uno tiene su propio color (`tema` en su `atlas.json`) dentro del mismo estilo nocturno. Los textos que dependen de la disciplina van en `textos`, nunca en el motor.
 
 ## Lo que el núcleo hereda del Atlas de la Filosofía
 

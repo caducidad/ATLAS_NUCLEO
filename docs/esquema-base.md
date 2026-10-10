@@ -267,9 +267,11 @@ Cada atlas declara aquí lo suyo. Todos los campos salvo `atlas`, `nombre` y `ar
 | `listas` | Campos propios que son listas de ids, con el tipo al que deben apuntar |
 | `obligatorios` | Campos que pasan a ser obligatorios en un tipo común |
 | `obligatoriosSi` | Campos obligatorios solo cuando se cumple una condición |
-| `tiposNodo` | Tipos de nodo propios, con sus campos obligatorios y valores admitidos |
+| `tiposNodo` | Tipos de nodo propios, con sus campos obligatorios y valores admitidos, y cómo se muestran: `etiqueta` («Experimento»), `plural` y `forma` en el mapa (circulo, cuadrado, rombo, triangulo, estrella, cruz o y) |
 | `relaciones` | Relaciones propias, con el mismo formato que el catálogo común; no pueden repetir una clave común |
 | `reglas` | Reglas editoriales propias. Hoy existe `fuenteSiDifiere`: una relación exige `fuente` cuando sus dos extremos tienen distinto valor en un campo |
+| `tema` | El color propio del atlas dentro del estilo común: `acento` (enlaces, selección, líneas de paralelo), `acentoClaro` (foco), y opcionalmente `cielo`, `cieloAlto`, `panel` y `linea` (fondos). Colores en formato `#rrggbb`. Los colores de lo visitado (rojo, naranja y amarillo) son comunes y no se cambian |
+| `textos` | Textos de la app que dependen de la disciplina, por clave. Hoy: `leyenda.fechasAlternativas` y `leyenda.carrilesSecundarios` (admite `{carriles}`). Sin ellos, la app usa un texto general |
 
 Hay un ejemplo completo y válido en [`ejemplos/atlas-minimo`](../ejemplos/atlas-minimo).
 
