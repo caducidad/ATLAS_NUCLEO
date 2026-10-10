@@ -1,8 +1,10 @@
 # El juego de los atlas
 
-Versión 0.1 · 8 de octubre de 2026
+Versión 0.2 · 10 de octubre de 2026
 
-Cómo funciona el juego en todos los atlas de la colección. El principio que lo ordena todo: **el juego orienta y premia, nunca bloquea.** Todo el contenido es siempre accesible; el juego solo ayuda a decidir por dónde seguir y a saber cuánto se ha recorrido.
+Cómo funciona el juego en todos los atlas de la colección. El principio que lo ordena todo: **el juego orienta y premia, nunca bloquea.** Todo el contenido es siempre accesible, y también todo el juego: el examen y los retos están abiertos desde el primer momento. El juego solo ayuda a decidir por dónde seguir y a saber cuánto se ha recorrido.
+
+**Se puede empezar por la prueba.** Mucha gente quiere saber cómo está en un tema antes de leer nada, a menudo con más optimismo del que luego se confirma. Cuando un reto o un examen no sale bien, empieza a navegar, y alguna pregunta le habrá despertado la curiosidad. Por eso «Pon a prueba lo que sabes» es una puerta de entrada al atlas, al mismo nivel que la línea del tiempo, la red y las grandes preguntas.
 
 ## Niebla de guerra (decidido)
 
@@ -10,7 +12,7 @@ El mapa empieza en penumbra y se enciende a medida que se explora, como unas bra
 
 | Visitas a un nodo | Aspecto |
 | --- | --- |
-| 0 | Sin explorar: contorno discontinuo y apagado |
+| 0 | Sin explorar: solo el contorno, apagado |
 | 1 | Rojo brasa |
 | 2-4 | Naranja |
 | 5 o más | Amarillo: lo que más arde es lo más trabajado |
@@ -22,14 +24,14 @@ Los umbrales se ajustarán al probar. Abrir la ficha de un nodo cuenta como visi
 **Un nivel es una época:** cada nodo de tipo `contexto` (las Cien Escuelas, los presocráticos, la India védica…). Cada nivel pasa por tres estados:
 
 1. **Sin explorar.**
-2. **Explorado:** el lector ha visitado todos los autores del círculo 1 de esa época. Llega solo, navegando.
-3. **Superado:** el lector ha aprobado el examen de la época. En el mapa, la época se enciende en dorado.
+2. **Explorado:** el lector ha visitado todos los autores del círculo 1 de esa época. Llega solo, navegando. Es solo un indicador de lo recorrido: no abre ni cierra nada.
+3. **Superado:** el lector ha aprobado el examen de la época. En el mapa, la época se enciende en dorado. Se puede superar sin haberla explorado.
 
 Un atlas cuyos autores no usen `circulo` considera explorada una época cuando se han visitado todos sus autores.
 
 ## Examen (decidido; se programa con los retos)
 
-**Opcional.** Nadie lo necesita para leer nada: sirve para quien quiera comprobar lo que sabe y «sellar» un nivel.
+**Opcional y siempre disponible.** Nadie lo necesita para leer nada, y nada hace falta para hacerlo: no exige haber visitado los autores de la época. Sirve para quien quiera comprobar lo que sabe, antes o después de explorar, y «sellar» un nivel.
 
 - **Diez preguntas** generadas desde los datos de la época; **se aprueba con ocho aciertos**.
 - **Se puede repetir sin límite**, y cada vez salen preguntas distintas.
@@ -53,7 +55,7 @@ Un atlas cuyos autores no usen `circulo` considera explorada una época cuando s
 - Las fechas solo se comparan cuando las horquillas no se solapan.
 - Cada pregunta tiene un botón «esta pregunta está mal» para avisar al autor del atlas.
 
-Los **retos** sueltos, fuera del examen, usan el mismo generador.
+Los **retos** sueltos, fuera del examen, usan el mismo generador. El lector elige de qué: todo el atlas, una época o un valor del campo de carriles (en filosofía, una tradición). Cada respuesta, acertada o no, lleva a la ficha correspondiente.
 
 ## Grandes preguntas (decidido)
 
@@ -61,7 +63,8 @@ Un tipo de nodo común, `pregunta`: las preguntas de fondo de cada disciplina, c
 
 - Campo obligatorio: `enunciado`, la pregunta tal como se formula.
 - Las respuestas son tesis (u otros nodos) unidos con la relación común `responde_a`: `tesis.agua_principio responde_a pregunta.de_que_esta_hecho_todo`.
-- Son una **puerta de entrada** más al mapa, junto a la cronológica, la temática y la libre, con su propia lente: la pregunta en el centro y las respuestas alrededor, agrupadas por el campo de carriles (en filosofía, por tradición).
+- Son una **puerta de entrada** más al mapa, junto a la línea del tiempo y la red, con su propia vista: primero la lista de preguntas; al elegir una, sus respuestas agrupadas por el campo de carriles (en filosofía, por tradición), cada una con la nota que explica cómo responde.
+- La nota de cada `responde_a` es opcional cuando la respuesta ya se entiende por el nombre o el enunciado de la tesis, y recomendable cuando la respuesta es un concepto o una obra.
 
 ## Azar
 
