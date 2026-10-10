@@ -28,7 +28,8 @@ Dentro de cada ficha: primero el **resumen** (dos o tres frases que entienda cua
    - Todo nombre propio va enlazado o explicado en la misma frase («el historiador griego Heródoto»).
    - Si aparece en varias fichas, merece ficha propia, aunque sea mínima. En Grecia y Roma así nacieron Alejandro Magno, Anaxímenes, Antístenes, Jenofonte, Arcesilao y Carnéades.
    - Los autores citados solo en una referencia también se explican («el escritor satírico Luciano de Samósata»).
-3. **Relectura** de una muestra de fichas en voz alta: si una frase no se entiende sin conocer la fuente, se reescribe.
+3. **Para saber más e imágenes,** en la revisión de cada ficha: los enlaces a fuentes abiertas, empezando por las de español, y la imagen con su licencia comprobada en su página de origen. Las mismas fuentes sirven para cotejar fechas y citas.
+4. **Relectura** de una muestra de fichas en voz alta: si una frase no se entiende sin conocer la fuente, se reescribe.
 
 ## 4. Revisión de Juan
 

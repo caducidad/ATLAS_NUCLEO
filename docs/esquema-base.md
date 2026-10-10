@@ -68,6 +68,7 @@ La app carga todos los archivos que enumera `atlas.json` y los une al arrancar, 
 | `estadoEvidencia` | No | consolidado, matizado, en_debate, no_replicado, desacreditado o superado (abajo) |
 | `notaEvidencia` | No | Por qué el nodo tiene ese estado, con su fuente |
 | `fuentes` | No | Referencias bibliográficas para la profundización |
+| `paraSaberMas` | No | Enlaces a fuentes abiertas para seguir leyendo (abajo) |
 
 Cada atlas puede declarar campos propios y hacer obligatorios campos que aquí son opcionales; en filosofía, por ejemplo, `tradicion` es obligatoria.
 
@@ -139,7 +140,7 @@ El validador comprueba la regla 3 y el formato de los enlaces. Para la regla 1 h
 ```json
 "imagenes": [
   {
-    "archivo": "imagenes/china/confucio-retrato.webp",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/…/Confucio.jpg",
     "fuente": "https://commons.wikimedia.org/wiki/File:…",
     "tipo": "retrato_imaginario",
     "pie": "Confucio. Representación imaginaria, grabado de época Ming (s. XVI).",
@@ -151,12 +152,39 @@ El validador comprueba la regla 3 y el formato de los enlaces. Para la regla 1 h
 ]
 ```
 
+- **Dónde está la imagen:** en `url`, un enlace directo a la imagen en Wikimedia (`upload.wikimedia.org` o `commons.wikimedia.org`), o en `archivo`, una ruta dentro del atlas (`imagenes/…`). Lleva uno de los dos, nunca ambos. Por ahora se enlaza desde Wikimedia, sin guardar copias; antes de publicar «en serio», las imágenes se copiarán al repositorio para que no dependan de que nadie borre o renombre el original. `fuente` es siempre la página de la imagen en Commons o en el museo, donde consta su licencia.
 - `tipo`: retrato_imaginario, retrato, fotografia, escultura, manuscrito, inscripcion, lugar, objeto u otro.
 - `licencia`: dominio_publico, CC0, CC-BY o CC-BY-SA (versiones 2.0, 2.5, 3.0 y 4.0). **No se admiten licencias no comerciales (NC) ni sin obras derivadas (ND)**, porque son incompatibles con la licencia CC BY-SA de los datos.
 - `credito`: obligatorio con CC BY y CC BY-SA; es la atribución que la app muestra bajo la imagen.
 - **La obra frente a la foto.** Una obra antigua puede ser de dominio público y la foto de un objeto en tres dimensiones tener derechos del fotógrafo: cuenta la licencia de la foto. Con figuras del siglo XX, muchas fotografías siguen protegidas.
 - **Rigor en el pie.** Toda imagen de una persona hecha mucho después indica que es una representación imaginaria y su fecha.
 - **Tamaño.** WebP, unos 800 píxeles de lado mayor (alrededor de 100 KB); la app solo las carga al abrir la ficha.
+
+## Para saber más
+
+Cada nodo puede terminar con enlaces a fuentes abiertas para seguir leyendo. El atlas no pretende sustituirlas: es un mapa que lleva hasta ellas.
+
+```json
+"paraSaberMas": [
+  {
+    "tipo": "enciclopedia",
+    "obra": "Stanford Encyclopedia of Philosophy",
+    "titulo": "Confucius",
+    "autorEntrada": "Mark Csikszentmihalyi",
+    "url": "https://plato.stanford.edu/entries/confucius/",
+    "idioma": "en"
+  }
+]
+```
+
+- `tipo`: enciclopedia, texto_original, traduccion, estudio, audio u otro.
+- `idioma`: código de la lengua (`es`, `en`, `fr`, `grc`, `zh`, `sa`…). La app pone primero los enlaces en la lengua del atlas y dice de los demás en qué lengua están.
+- `autorEntrada` (opcional): quién firma la entrada o la traducción.
+- **Solo acceso abierto.** Nada que el lector no pueda abrir: las obras de pago (por suscripción) pueden citarse en `fuentes`, pero no aquí.
+- **Enlazar, no copiar.** Que una obra sea de acceso abierto no permite copiar su texto: se enlaza y se resume con palabras propias.
+- **Comprobados.** Cada enlace se abre antes de añadirlo, para confirmar que existe y que dice lo que el título promete.
+
+Fuentes abiertas que sirven a toda la colección, por ejemplo: en filosofía, la Stanford Encyclopedia of Philosophy, la Internet Encyclopedia of Philosophy, Philosophica (en español), Perseus (textos griegos y latinos), el Chinese Text Project y SuttaCentral (textos budistas); en psicología, artículos con DOI en acceso abierto.
 
 ## Relaciones
 

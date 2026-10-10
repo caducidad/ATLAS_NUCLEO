@@ -129,7 +129,6 @@
   },
   "imagenes": {
     "obligatorios": [
-      "archivo",
       "fuente",
       "tipo",
       "pie",
@@ -167,6 +166,11 @@
       "CC-BY-SA-2.5",
       "CC-BY-SA-3.0",
       "CC-BY-SA-4.0"
+    ],
+    "ubicacion": "Cada imagen lleva «archivo» (ruta dentro del atlas) o «url» (enlace directo a la imagen), y solo uno de los dos.",
+    "hostsUrl": [
+      "upload.wikimedia.org",
+      "commons.wikimedia.org"
     ]
   },
   "nodosQueDebenRelacionarse": [
@@ -175,5 +179,23 @@
     "concepto",
     "tesis",
     "pregunta"
-  ]
+  ],
+  "paraSaberMas": {
+    "obligatorios": [
+      "tipo",
+      "obra",
+      "titulo",
+      "url",
+      "idioma"
+    ],
+    "tipos": [
+      "enciclopedia",
+      "texto_original",
+      "traduccion",
+      "estudio",
+      "audio",
+      "otro"
+    ],
+    "descripcion": "Enlaces a fuentes abiertas para seguir leyendo: entradas de enciclopedias, el texto original o su traducción, estudios. Primero las fuentes en la lengua del atlas."
+  }
 }

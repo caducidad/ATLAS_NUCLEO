@@ -163,8 +163,33 @@ def comprobar_imagenes(i, imagenes, esquema, ruta_atlas, errores):
             errores.append(f"{etiqueta}: licencia «{licencia}» no admitida (se excluyen NC y ND)")
         if licencia in regla["exigenCredito"] and not img.get("credito"):
             errores.append(f"{etiqueta}: la licencia {licencia} exige «credito»")
+        if bool(img.get("archivo")) == bool(img.get("url")):
+            errores.append(f"{etiqueta}: lleva «archivo» o «url», y solo uno de los dos")
         if img.get("archivo") and not os.path.exists(os.path.join(ruta_atlas, img["archivo"])):
             errores.append(f"{etiqueta}: no existe el archivo {img['archivo']}")
+        if img.get("url"):
+            m = re.match(r"https://([^/]+)/", img["url"])
+            if not m or m.group(1) not in regla.get("hostsUrl", []):
+                errores.append(f"{etiqueta}: «url» debe ser https y de {', '.join(regla.get('hostsUrl', []))}")
+
+
+def comprobar_saber_mas(i, enlaces, esquema, errores):
+    regla = esquema["base"]["paraSaberMas"]
+    vistos = set()
+    for k, e in enumerate(enlaces, 1):
+        etiqueta = f"{i}: para saber más {k}"
+        for campo in regla["obligatorios"]:
+            if not e.get(campo):
+                errores.append(f"{etiqueta}: falta «{campo}»")
+        if e.get("tipo") and e["tipo"] not in regla["tipos"]:
+            errores.append(f"{etiqueta}: tipo desconocido «{e['tipo']}»")
+        if e.get("url") and not re.match(r"https?://[^\s/]+\.[^\s/]+(/\S*)?$", e["url"]):
+            errores.append(f"{etiqueta}: url mal formada «{e['url']}»")
+        if e.get("idioma") and not re.match(r"^[a-z]{2,3}$", e["idioma"]):
+            errores.append(f"{etiqueta}: idioma «{e['idioma']}» debe ser un código como es, en, fr")
+        if e.get("url") in vistos:
+            errores.append(f"{etiqueta}: enlace repetido")
+        vistos.add(e.get("url"))
 
 
 def falta(n, campo):
@@ -246,6 +271,7 @@ def validar(ruta_atlas, otros):
             elif h["inicio"] > h["fin"]:
                 errores.append(f"{i}: la horquilla empieza después de terminar")
         comprobar_imagenes(i, n.get("imagenes", []), esquema, ruta_atlas, errores)
+        comprobar_saber_mas(i, n.get("paraSaberMas", []), esquema, errores)
 
     # ---- relaciones
     for i, veces in collections.Counter(r.get("id") for r in relaciones).items():
