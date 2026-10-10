@@ -35,6 +35,8 @@ Las cuatro disciplinas comparten tronco y figuras (Durkheim, G. H. Mead, William
 ```
 docs/
   plan.md            Decisiones tomadas y plan de trabajo
+  redaccion.md       Cómo se redactan y revisan las fichas
+  juego.md           Niebla, niveles, examen, grandes preguntas y azar
   esquema-base.md    Esquema común: nodos, relaciones, textos, imágenes, progreso,
                      Guía de redacción y cómo amplía cada atlas el esquema
 esquema/

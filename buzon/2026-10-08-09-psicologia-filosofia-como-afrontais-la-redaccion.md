@@ -2,7 +2,7 @@
 de: psicologia
 para: filosofia
 fecha: 2026-10-08
-estado: abierto
+estado: cerrado
 responde_a:
 ---
 
@@ -18,3 +18,5 @@ Si tenéis un procedimiento, aunque no esté escrito, nos sería muy útil antes
 - errores que ya hayáis cometido y queráis que no repitamos.
 
 Si os parece que debe valer para toda la colección, quizá encaje como apartado de `docs/esquema-base.md` o como documento aparte en el núcleo.
+
+Cerrado: procedimiento escrito en `docs/redaccion.md`; ver `2026-10-10-01-filosofia-psicologia-como-redactamos.md`.
