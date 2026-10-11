@@ -57,6 +57,25 @@ Un atlas cuyos autores no usen `circulo` considera explorada una época cuando s
 
 Los **retos** sueltos, fuera del examen, usan el mismo generador. El lector elige de qué: todo el atlas, una época o un valor del campo de carriles (en filosofía, una tradición). Cada respuesta, acertada o no, lleva a la ficha correspondiente.
 
+## Cómo está programado (prototipo de filosofía)
+
+La vista **«Pon a prueba»** tiene su botón en la barra. Ofrece un reto rápido de cinco preguntas (de todo el atlas o de una tradición) y, por cada época, un reto o el examen. El examen también se abre desde la ficha de la época.
+
+**Plantillas de pregunta** que hoy salen de los datos: maestro y discípulo, quién escribió una obra (o a quién se atribuye), quién defendió una tesis, quién desarrolló un concepto, qué significa un término, de quién es una anécdota, quién vivió antes de tres, paralelos entre tradiciones, a qué gran pregunta responde una idea, a qué escuela perteneció un autor y en qué época se sitúa (esta última no sale en el examen de una época, porque la respuesta sería siempre la misma).
+
+**Comprobaciones añadidas al programarlo:**
+
+- La pregunta no puede delatar la respuesta: se descarta «¿quién escribió el *Mencio*?» y, en las anécdotas, el nombre del autor se tapa con «[…]».
+- El sujeto de la pregunta no puede ser una opción («¿quién fue maestro de Li Si?» sin Li Si entre las respuestas).
+- «Quién desarrolló un concepto» solo se pregunta si lo desarrollaron uno o dos autores; si fueron más, otras opciones también serían correctas.
+- En «a qué gran pregunta responde», se descartan también las preguntas que responden los vecinos cercanos de la idea (la tesis que trata de ese concepto).
+- En «qué significa», las traducciones falsas no comparten palabras con la verdadera.
+- En una tanda no se repite tema ni respuesta, y se alternan las plantillas.
+
+**Épocas con poco contenido.** Si una época no da para diez preguntas distintas, el examen es más corto (se aprueba con el 80 %); con menos de cinco no hay examen, solo reto. Es una señal de qué épocas conviene ampliar.
+
+**Avisos.** Cada pregunta respondida tiene un enlace «¿Esta pregunta está mal?» si el atlas declara `avisos` en su `atlas.json`.
+
 ## Grandes preguntas (decidido)
 
 Un tipo de nodo común, `pregunta`: las preguntas de fondo de cada disciplina, como «¿De qué está hecho todo?» en filosofía o «¿Naturaleza o crianza?» en psicología.
@@ -88,8 +107,11 @@ Rangos y logros quedaron fuera por decisión de Juan.
 
 ```json
 "niveles": {
-  "filosofia:contexto.cien_escuelas": { "superado": "2026-10-20", "mejor": 9, "intentos": 2 }
+  "filosofia:contexto.cien_escuelas": { "superado": "2026-10-20", "mejor": 9, "de": 10, "intentos": 2, "ultimo": "2026-10-21" }
+},
+"retos": {
+  "filosofia:carril:china": { "intentos": 3, "mejor": 5, "de": 5, "ultimo": "2026-10-21" }
 }
 ```
 
-El estado «explorado» no se guarda: se calcula a partir de las visitas.
+El estado «explorado» no se guarda: se calcula a partir de las visitas. Un examen suspendido también deja su entrada en `niveles`, sin `superado`.

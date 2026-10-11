@@ -299,7 +299,9 @@ Cada atlas declara aquí lo suyo. Todos los campos salvo `atlas`, `nombre` y `ar
 | `relaciones` | Relaciones propias, con el mismo formato que el catálogo común; no pueden repetir una clave común |
 | `reglas` | Reglas editoriales propias. Hoy existe `fuenteSiDifiere`: una relación exige `fuente` cuando sus dos extremos tienen distinto valor en un campo |
 | `tema` | El color propio del atlas dentro del estilo común: `acento` (enlaces, selección, líneas de paralelo), `acentoClaro` (foco), y opcionalmente `cielo`, `cieloAlto`, `panel` y `linea` (fondos). Colores en formato `#rrggbb`. Los colores de lo visitado (rojo, naranja y amarillo) son comunes y no se cambian |
-| `textos` | Textos de la app que dependen de la disciplina, por clave. Hoy: `leyenda.fechasAlternativas` y `leyenda.carrilesSecundarios` (admite `{carriles}`). Sin ellos, la app usa un texto general |
+| `textos` | Textos de la app que dependen de la disciplina, por clave. Hoy: `leyenda.fechasAlternativas`, `leyenda.carrilesSecundarios` (admite `{carriles}`) y `preguntas.intro`. Sin ellos, la app usa un texto general |
+| `avisos` | Opcional. Dirección donde el lector avisa de una pregunta de reto o examen que está mal (por ejemplo, la de crear una incidencia en el repositorio del atlas). La app añade el título y el texto del aviso. Sin ella, no se muestra el enlace |
+| `idioma` | Opcional. Lengua del atlas (por defecto `es`): decide qué enlaces de «para saber más» van primero |
 
 Hay un ejemplo completo y válido en [`ejemplos/atlas-minimo`](../ejemplos/atlas-minimo).
 
