@@ -47,8 +47,9 @@ Juan revisa cada tanda leyendo fichas sueltas y señala lo que no se entiende. S
 
 Conviene saberlo para no confiarse:
 
-- **Muchas citas de anécdotas se escribieron de memoria** (pasajes de Diógenes Laercio, Plutarco, Tácito, Plinio…). Están marcadas con su fiabilidad, pero aún no se han cotejado una por una con las ediciones. Es un trabajo pendiente antes de publicar en serio.
-- **Las fechas de Grecia y Roma y las del Próximo Oriente** no han pasado todavía por la revisión que sí tuvieron las de India y China.
+- **Muchas citas de anécdotas se escribieron de memoria.** En filosofía ya se han cotejado con el texto las de Diógenes Laercio de los autores principales, y el resto de esos autores se ha revisado sin abrir el texto (registro en `docs/revision.md` del Atlas de la Filosofía). Faltan las demás, sobre todo las chinas e indias y las de los círculos 2 y 3.
+- **No todas las fuentes se dejan leer automáticamente.** El Chinese Text Project lo prohíbe expresamente y Wikimedia limita las consultas; se respetan esas condiciones y se coteja a mano o con otras ediciones abiertas.
+- **Las fechas** ya están revisadas en las cuatro tradiciones de filosofía.
 - **El juicio de un especialista** no lo sustituye ninguna de estas comprobaciones: los debates abiertos se señalan para que alguien que domine el campo pueda revisarlos.
 
 ## Para psicología, en particular
