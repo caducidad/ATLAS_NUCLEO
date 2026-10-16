@@ -37,6 +37,7 @@ docs/
   plan.md            Decisiones tomadas y plan de trabajo
   redaccion.md       Cómo se redactan y revisan las fichas
   juego.md           Niebla, niveles, examen, grandes preguntas y azar
+  semillas/          Mensajes iniciales para arrancar la conversación de un atlas nuevo
   esquema-base.md    Esquema común: nodos, relaciones, textos, imágenes, progreso,
                      Guía de redacción y cómo amplía cada atlas el esquema
 esquema/

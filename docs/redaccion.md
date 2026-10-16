@@ -15,7 +15,7 @@ Procedimiento que sigue el Atlas de la Filosofía y que se propone para toda la 
 Antes de escribir una tanda se decide en qué archivo irá. La regla común:
 
 - **Un archivo de datos por tanda:** una tradición y una época en filosofía, un periodo en psicología. Cada atlas lista sus archivos y lo que contienen en su `docs/esquema.md`.
-- **Lo transversal, en archivos propios:** temáticas, grandes preguntas.
+- **Lo transversal suele ir en archivos propios:** las temáticas, las escuelas que atraviesan varios periodos y, cuando reúnen respuestas de muchas tandas, las grandes preguntas. Cada atlas decide.
 - **Cada relación, en el archivo de la tanda que la crea,** aunque una a nodos de dos archivos. Se guarda una sola vez y el archivo más antiguo no se toca.
 - **Un prefijo de relaciones por archivo,** declarado en su cabecera (`prefijoRelaciones`).
 
