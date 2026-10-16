@@ -12,8 +12,8 @@ Pieza compartida de la colección **Atlas**: mapas interactivos de disciplinas e
 | --- | --- | --- |
 | Atlas de la Filosofía | [ATLAS_FILOSOFIA](https://github.com/caducidad/ATLAS_FILOSOFIA) | Piloto de la Antigüedad con datos completos; ya usa el núcleo |
 | Atlas de la Psicología | [ATLAS_PSICOLOGIA](https://github.com/caducidad/ATLAS_PSICOLOGIA) | Piloto en preparación; atlas.json y datos estructurales sobre el núcleo |
-| Atlas de la Sociología | (pendiente) | Idea |
-| Atlas de la Antropología | (pendiente) | Idea |
+| Atlas de la Sociología | [ATLAS_SOCIOLOGIA](https://github.com/caducidad/ATLAS_SOCIOLOGIA) | Repositorio creado; arranca con `docs/semillas/sociologia.md` |
+| Atlas de la Antropología | [ATLAS_ANTROPOLOGIA](https://github.com/caducidad/ATLAS_ANTROPOLOGIA) | Repositorio creado; arranca con `docs/semillas/antropologia.md` |
 
 Las cuatro disciplinas comparten tronco y figuras (Durkheim, G. H. Mead, William James, Freud, Lévi-Strauss…), así que los atlas se enlazan entre sí mediante **puentes**.
 
