@@ -10,7 +10,16 @@ Procedimiento que sigue el Atlas de la Filosofía y que se propone para toda la 
 - **Verificar la bibliografía** antes de usarla: editorial, traductor, año e ISBN contrastados con los catálogos (editoriales, Biblioteca Nacional, Dialnet). Lo que no se pueda confirmar se marca como no verificado.
 - **Revisar las fechas** de cada figura del canon contra varias obras de referencia, anotar las contradicciones y señalar los debates abiertos que necesitarían un especialista. Las fechas inciertas se guardan como horquillas, nunca como un número.
 
-## 2. Orden de trabajo de cada tanda
+## 2. Dónde va cada cosa
+
+Antes de escribir una tanda se decide en qué archivo irá. La regla común:
+
+- **Un archivo de datos por tanda:** una tradición y una época en filosofía, un periodo en psicología. Cada atlas lista sus archivos y lo que contienen en su `docs/esquema.md`.
+- **Lo transversal, en archivos propios:** temáticas, grandes preguntas.
+- **Cada relación, en el archivo de la tanda que la crea,** aunque una a nodos de dos archivos. Se guarda una sola vez y el archivo más antiguo no se toca.
+- **Un prefijo de relaciones por archivo,** declarado en su cabecera (`prefijoRelaciones`).
+
+## 3. Orden de trabajo de cada tanda
 
 Una tanda es un bloque coherente (una tradición, un periodo). Se redacta por partes y después se une:
 
@@ -21,7 +30,7 @@ Una tanda es un bloque coherente (una tradición, un periodo). Se redacta por pa
 
 Dentro de cada ficha: primero el **resumen** (dos o tres frases que entienda cualquiera), después la **profundización** y por último las **anécdotas**, cada una con su referencia y su fiabilidad.
 
-## 3. Comprobaciones antes de subir
+## 4. Comprobaciones antes de subir
 
 1. **Validador** (`herramientas/validar.py`): sin errores.
 2. **Nombres sin enlazar** (`herramientas/revisar_nombres.py`): revisar a mano, empezando por los que se repiten en varias fichas.
@@ -31,11 +40,11 @@ Dentro de cada ficha: primero el **resumen** (dos o tres frases que entienda cua
 3. **Para saber más e imágenes,** en la revisión de cada ficha: los enlaces a fuentes abiertas, empezando por las de español, y la imagen con su licencia comprobada en su página de origen. Las mismas fuentes sirven para cotejar fechas y citas.
 4. **Relectura** de una muestra de fichas en voz alta: si una frase no se entiende sin conocer la fuente, se reescribe.
 
-## 4. Revisión de Juan
+## 5. Revisión de Juan
 
 Juan revisa cada tanda leyendo fichas sueltas y señala lo que no se entiende. Sus observaciones se convierten en reglas para todo lo que viene después. La Guía de redacción nació así, de la revisión de la ficha de Han Feizi.
 
-## 5. Errores que ya cometimos
+## 6. Errores que ya cometimos
 
 - **Referencias crípticas.** «(Shiji 63 · C)» no dice nada a un lector. Hay que citar con el nombre de la obra enlazado y el capítulo, y la app traduce la letra de fiabilidad a palabras.
 - **Nombres sin contexto.** Personas y lugares mencionados de pasada, sin enlace ni explicación.
@@ -43,7 +52,7 @@ Juan revisa cada tanda leyendo fichas sueltas y señala lo que no se entiende. S
 - **Enlaces automáticos que se equivocan.** Al enlazar por script las primeras menciones, «la Upaniṣad» (una concreta) acabó apuntando al corpus entero, y «Uno de ellos» al concepto del Uno. Todo enlace automático se revisa después.
 - **Archivos rotos al escribir por partes.** Un campo vacío mal cerrado truncó un archivo entero. Por eso el validador se pasa siempre antes de subir.
 
-## 6. Lo que todavía no hacemos bien
+## 7. Lo que todavía no hacemos bien
 
 Conviene saberlo para no confiarse:
 
