@@ -14,13 +14,14 @@ Montaje: datos en JSON servidos desde GitHub Pages, sin servidores, sin cuentas 
 
 1. Núcleo: `docs/plan.md` (decisiones numeradas), `buzon/README.md` y los mensajes con `estado: abierto`, `docs/esquema-base.md` (con la Guía de redacción), `docs/redaccion.md`, `docs/juego.md`.
 2. Filosofía: `README.md`, `atlas.json`, `docs/esquema.md`, `docs/navegacion.md`, `docs/revision.md` (registro de la revisión de contenido, con lo pendiente al final).
-3. El motor: `app/motor.js` y `app/estilo.css` (unas 1500 líneas; léelo antes de tocarlo).
+3. El motor: `app/motor.js` y `app/estilo.css` (unas 2300 líneas entre los dos; léelo antes de tocarlo).
 
 ## Dónde estamos (18 de octubre de 2026)
 
 - **Contenido:** la Antigüedad en cuatro tradiciones (Grecia y Roma, India, China y el Próximo Oriente como preámbulo), con unos 370 nodos y 600 relaciones, más 12 grandes preguntas. Revisado contra las fuentes: anécdotas cotejadas con el texto casi en su totalidad, fechas revisadas, «Para saber más» en 47 autores e imágenes enlazadas desde Wikimedia en 34. Añadidas Hipatia, Hiparquia y Ban Zhao.
 - **App:** cuatro puertas de entrada (Línea del tiempo, Red, Grandes preguntas y Pon a prueba). La ficha muestra imagen, anécdotas, relaciones y «Para saber más». Retos de cinco preguntas (todo el atlas, una tradición o una época) y examen de cada época siempre abierto (diez preguntas, se aprueba con ocho; la época se pone dorada). Progreso en el navegador, exportable.
 - **Publicado:** la entrada del blog está en público.
+- **Edad Media, empezada:** informe previo en `docs/informes/edad-media.md` de Filosofía (canon, fechas, fronteras, bibliografía) y, en la rama `edad-media`, el archivo `latina-medieval.json` con las cinco épocas y las ocho escuelas de la Europa latina. Sus textos enlazan 47 fichas que aún no existen: son la lista de trabajo. La rama no se une a `main` (que es lo que se publica) hasta que la tanda esté completa y revisada.
 
 ## Cómo trabajamos
 
@@ -41,5 +42,5 @@ Montaje: datos en JSON servidos desde GitHub Pages, sin servidores, sin cuentas 
 
 1. **Pasar el motor al núcleo** (decisión 2 del plan: se declara común después de probarlo con lectores reales; la entrada ya es pública, así que conviene esperar a tener algunas impresiones o decidirlo conmigo), para que Psicología lo use con su color, su tipo `experimento` y su estado de la evidencia. Incluye plantillas de reto propias de psicología (propuestas en el buzón del 11 de octubre).
 2. **Zoom y tamaño de letra** de la línea del tiempo y de la red, que dejé para más adelante.
-3. **Edad Media**, siguiendo el procedimiento de `docs/redaccion.md` y la revisión de fuentes desde el principio.
+3. **Edad Media**, siguiendo el procedimiento de `docs/redaccion.md` y la revisión de fuentes desde el principio. Decidido el 18 de octubre: tres carriles nuevos (Europa latina, pensamiento judío, mundo islámico; Bizancio en el griego), los tardoantiguos abren la Edad Media y se empieza por la Europa latina. Siguiente paso: los autores del círculo 1 de la Europa latina.
 4. Restos de la revisión (final de `docs/revision.md`): unas pocas citas aún sin cotejar, «Para saber más» de cinco autores e imágenes de 19.
