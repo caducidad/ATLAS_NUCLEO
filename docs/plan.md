@@ -82,4 +82,4 @@ Para que el núcleo lo tenga en cuenta desde el principio:
 ## Resuelto
 
 - **La navegación desde distintos puntos de vista** está documentada en [`docs/navegacion.md`](https://github.com/caducidad/ATLAS_FILOSOFIA/blob/main/docs/navegacion.md) del Atlas de la Filosofía. Para el núcleo, lo único que cambia por atlas es qué campo define los carriles de la vista cronológica.
-- **El código de la app** todavía no existe: hay datos, validador, documentación y un boceto visual estático. El motor se escribirá directamente pensando en la colección (decisión 2).
+- **El código de la app** existe y está publicado: el motor vive todavía en `app/` del Atlas de la Filosofía, escrito pensando en la colección (lee `atlas.json`, tipos propios, tema y textos de cada atlas). Pasará al núcleo cuando se declare común (decisión 2).
